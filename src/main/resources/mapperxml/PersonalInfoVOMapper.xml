@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxw.g_Design.mapper.PersonalInfoVOMapper">
+  <resultMap id="BaseResultMap" type="com.lxw.g_Design.model.PersonalInfoVO">
+    <result column="session_id" jdbcType="VARCHAR" property="session_id" />
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatar_url" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="language" jdbcType="VARCHAR" property="language" />
+    <result column="level_type" jdbcType="VARCHAR" property="level_type" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nick_name" />
+    <result column="open_id" jdbcType="VARCHAR" property="open_id" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phone_number" />
+    <result column="point" jdbcType="INTEGER" property="point" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="referee_id" jdbcType="VARCHAR" property="referee_id" />
+    <result column="reference_id" jdbcType="VARCHAR" property="reference_id" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+    <result column="valid" jdbcType="BIT" property="valid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lxw.g_Design.model.PersonalInfoVO">
+    insert into tb_personal_info (session_id, avatar_url, city, 
+      country, create_time, email, 
+      gender, language, level_type, 
+      nick_name, open_id, password, 
+      phone_number, point, province, 
+      referee_id, reference_id, update_time, 
+      valid)
+    values (#{session_id,jdbcType=VARCHAR}, #{avatar_url,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{create_time,jdbcType=TIMESTAMP}, #{email,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR}, #{level_type,jdbcType=VARCHAR}, 
+      #{nick_name,jdbcType=VARCHAR}, #{open_id,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{phone_number,jdbcType=VARCHAR}, #{point,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, 
+      #{referee_id,jdbcType=VARCHAR}, #{reference_id,jdbcType=VARCHAR}, #{update_time,jdbcType=TIMESTAMP}, 
+      #{valid,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lxw.g_Design.model.PersonalInfoVO">
+    insert into tb_personal_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="session_id != null">
+        session_id,
+      </if>
+      <if test="avatar_url != null">
+        avatar_url,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="country != null">
+        country,
+      </if>
+      <if test="create_time != null">
+        create_time,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="language != null">
+        language,
+      </if>
+      <if test="level_type != null">
+        level_type,
+      </if>
+      <if test="nick_name != null">
+        nick_name,
+      </if>
+      <if test="open_id != null">
+        open_id,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="phone_number != null">
+        phone_number,
+      </if>
+      <if test="point != null">
+        point,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="referee_id != null">
+        referee_id,
+      </if>
+      <if test="reference_id != null">
+        reference_id,
+      </if>
+      <if test="update_time != null">
+        update_time,
+      </if>
+      <if test="valid != null">
+        valid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="session_id != null">
+        #{session_id,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar_url != null">
+        #{avatar_url,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null">
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="language != null">
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="level_type != null">
+        #{level_type,jdbcType=VARCHAR},
+      </if>
+      <if test="nick_name != null">
+        #{nick_name,jdbcType=VARCHAR},
+      </if>
+      <if test="open_id != null">
+        #{open_id,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone_number != null">
+        #{phone_number,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null">
+        #{point,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="referee_id != null">
+        #{referee_id,jdbcType=VARCHAR},
+      </if>
+      <if test="reference_id != null">
+        #{reference_id,jdbcType=VARCHAR},
+      </if>
+      <if test="update_time != null">
+        #{update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valid != null">
+        #{valid,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  
+  <select id="findByMobileAndPassword" parameterType="String" resultMap="BaseResultMap">
+  	select * from tb_personal_info 
+  	where phone_number = #{mobile} and password = #{password}
+  </select>
+</mapper>
